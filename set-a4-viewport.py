@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Inkscape extension for setting the viewport to a centered A4 portrait sheet
 # Copyright (C) 2019  Rafael Laboissière
 #
