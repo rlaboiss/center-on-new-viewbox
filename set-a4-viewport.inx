@@ -7,7 +7,7 @@
     <command reldir="extensions" interpreter="python">set-a4-viewport.py</command>
   </script>
   <effect>
-    <object-type>rect</object-type>
+    <object-type>all</object-type>
     <effects-menu>
        <submenu _name="Document"/>
     </effects-menu>
