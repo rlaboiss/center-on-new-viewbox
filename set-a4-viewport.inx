@@ -6,9 +6,6 @@
   <script>
     <command reldir="extensions" interpreter="python">set-a4-viewport.py</command>
   </script>
-  <dependency type="executable" location="extensions">set-a4-paper.py</dependency>
-  <dependency type="executable" location="extensions">inkex.py</dependency>
-
   <effect>
     <object-type>rect</object-type>
     <effects-menu>
