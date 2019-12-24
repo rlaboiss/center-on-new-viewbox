@@ -23,12 +23,19 @@ from subprocess import Popen, PIPE
 class SetA4ViewportEffect (inkex.Effect):
     def __init__ (self):
         inkex.Effect.__init__ (self)
+        self.OptionParser.add_option ('--orientation', dest = 'orientation',
+                                      action = 'store', type = 'string',
+                                      default = 'portrait')
 
     def effect(self):
         dpi = 96
         scale = dpi / 25.4
-        width_mm = 210
-        height_mm = 297
+        if self.options.orientation == 'portrait':
+            width_mm = 210
+            height_mm = 297
+        else:
+            width_mm = 297
+            height_mm = 210
         width_px = width_mm * scale
         height_px = height_mm * scale
         root = self.xpathSingle ('//svg:svg')

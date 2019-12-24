@@ -6,6 +6,10 @@
   <script>
     <command reldir="extensions" interpreter="python">set-a4-viewport.py</command>
   </script>
+  <param name="orientation" type="optiongroup" gui-text="Paper orientation">
+    <option value="portrait">portrait</option>
+    <option value="landscape">landscape</option>
+  </param>
   <effect>
     <object-type>all</object-type>
     <effects-menu>

@@ -2,9 +2,10 @@
 
 ## Description
 
-This Inkscape extension sets the viewport to the A4 portrait format and
-center the content of the drawing to that viewport.  This may be useful for
-printing the drawing and ensuring that it will centered on the paper.
+This Inkscape extension sets the viewport to the A4 format (either portrait
+or landscape) and center the content of the drawing to that viewport.  This
+may be useful for printing the drawing and ensuring that it will centered
+on the paper.
 
 ## Installation
 
@@ -19,13 +20,13 @@ $ make install
 
 ## Usage
 
-Just select the menu item Document → Set A4 viewport.
+Just select the menu item Document → Set A4 viewport.  Either portrait or
+landscape orientation can be chosen.
 
 ## Limitations
 
-This extension is limited to the A$ format in the ortrait orientation.  It
-will be eventually improved to allow other paper formats and the landscape
-orientation.
+This extension is limited to the A4 format.  It will be eventually improved
+in order to allow other paper formats.
 
 ## Author
 
