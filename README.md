@@ -8,9 +8,10 @@ printing the drawing and ensuring that it will centered on the paper.
 
 ## Installation
 
-Copy the files `set-a4-viewport.inx` and `set-a4-viewport.py` the
+Copy the files `set-a4-viewport.inx` and `set-a4-viewport.py` into the
 Inkscape's `extensions/` directory.  In Linux systems, you can use the
-provided `Makefile` to install te file in the user's extensions directory:
+provided `Makefile` to install the files in the user's extensions
+directory:
 
 ```sh
 $ make install
