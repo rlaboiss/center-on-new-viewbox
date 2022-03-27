@@ -22,6 +22,8 @@ import inkex  # noqa
 
 
 class SetA4ViewportEffect(inkex.Effect):
+    "Effect for setting the Viewport to A4 paper format"
+
     def __init__(self):
         inkex.Effect.__init__(self)
         self.arg_parser.add_argument(
@@ -32,6 +34,10 @@ class SetA4ViewportEffect(inkex.Effect):
         )
 
     def effect(self):
+        "Effect function"
+
+        # Set the width and height of an A4 paper, according to the
+        # orientation (portrait or landscape)
         dpi = 96
         scale = dpi / 25.4
         if self.options.orientation == "portrait":
@@ -40,10 +46,16 @@ class SetA4ViewportEffect(inkex.Effect):
         else:
             width_mm = 297
             height_mm = 210
+
+        # Convert the dimensions from mm to px
         width_px = width_mm * scale
         height_px = height_mm * scale
+
+        # Get the current viewBox of the drawing
         root = self.svg.getElement("//svg:svg")
         vbox = [float(i) for i in root.get("viewBox").split(" ")]
+
+        # Compute the new position of the viewBox
         posx = vbox[0] - (width_px - vbox[2]) / 2
         posy = vbox[1] - (height_px - vbox[3]) / 2
         root = self.svg.getElement("//svg:svg")
