@@ -16,7 +16,6 @@
 # http://www.gnu.org/licenses/.
 
 import sys
-from subprocess import PIPE, Popen
 
 sys.path.append("/usr/share/inkscape/extensions")
 import inkex  # noqa
@@ -45,13 +44,8 @@ class SetA4ViewportEffect(inkex.Effect):
         height_px = height_mm * scale
         root = self.svg.getElement("//svg:svg")
         vbox = [float(i) for i in root.get("viewBox").split(" ")]
-        command = f'inkscape --query-all "{self.svg_file}"'
-        proc = Popen(command, shell=True, stdout=PIPE, stderr=PIPE, encoding="utf-8")
-        proc.wait()
-        line = proc.stdout.readline()
-        bbox = [float(i) for i in line.split(",")[1:5]]
-        posx = vbox[0] + bbox[0] - (width_px - bbox[2]) / 2
-        posy = vbox[1] + bbox[1] - (height_px - bbox[3]) / 2
+        posx = vbox[0] - (width_px - vbox[2]) / 2
+        posy = vbox[1] - (height_px - vbox[3]) / 2
         root = self.svg.getElement("//svg:svg")
         root.set("viewBox", f"{posx} {posy} {width_px} {height_px}")
         root.set("width", f"{width_mm}mm")
