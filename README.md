@@ -20,8 +20,8 @@ $ make install
 
 ## Usage
 
-Just select the menu item Document → Set A4 viewport. Either portrait or
-landscape orientation can be chosen.
+Just select the menu item Extensions → Document → Set A4 viewport. Either
+portrait or landscape orientation can be chosen.
 
 ## Limitations
 
