@@ -30,6 +30,6 @@ in order to allow other paper formats.
 
 ## Author
 
-Copyright (C) 2019 Rafael Laboissière (<rafael@laboissiere.net>)
+Copyright (C) 2019, 2022 Rafael Laboissière (<rafael@laboissiere.net>)
 
 Released under the GNU General Public License, version 3 or later. No warranties.
