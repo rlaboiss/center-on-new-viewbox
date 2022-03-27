@@ -16,21 +16,27 @@
 # http://www.gnu.org/licenses/.
 
 import sys
-sys.path.append ('/usr/share/inkscape/extensions')
-import inkex
-from subprocess import Popen, PIPE
+from subprocess import PIPE, Popen
 
-class SetA4ViewportEffect (inkex.Effect):
-    def __init__ (self):
-        inkex.Effect.__init__ (self)
-        self.OptionParser.add_option ('--orientation', dest = 'orientation',
-                                      action = 'store', type = 'string',
-                                      default = 'portrait')
+sys.path.append("/usr/share/inkscape/extensions")
+import inkex  # noqa
+
+
+class SetA4ViewportEffect(inkex.Effect):
+    def __init__(self):
+        inkex.Effect.__init__(self)
+        self.OptionParser.add_option(
+            "--orientation",
+            dest="orientation",
+            action="store",
+            type="string",
+            default="portrait",
+        )
 
     def effect(self):
         dpi = 96
         scale = dpi / 25.4
-        if self.options.orientation == 'portrait':
+        if self.options.orientation == "portrait":
             width_mm = 210
             height_mm = 297
         else:
@@ -38,20 +44,20 @@ class SetA4ViewportEffect (inkex.Effect):
             height_mm = 210
         width_px = width_mm * scale
         height_px = height_mm * scale
-        root = self.xpathSingle ('//svg:svg')
-        vb = [float (i) for i in root.get ('viewBox').split (' ')]
-        command = ('inkscape --without-gui --query-all "{}"'
-                   .format (self.svg_file))
-        p = Popen (command, shell = True, stdout = PIPE, stderr = PIPE)
-        rc = p.wait ()
-        s = p.stdout.readline ()
-        bbox = [float (i) for i in s.split (',') [1 : 5]]
-        x = vb [0] + bbox [0] - (width_px - bbox [2]) / 2
-        y = vb [1] + bbox [1] - (height_px - bbox [3]) / 2
-        root = self.xpathSingle ('//svg:svg')
-        root.set ('viewBox', '{} {} {} {}'.format (x, y, width_px, height_px))
-        root.set ('width', '{}mm'.format (width_mm))
-        root.set ('height', '{}mm'.format (height_mm))
+        root = self.xpathSingle("//svg:svg")
+        vbox = [float(i) for i in root.get("viewBox").split(" ")]
+        command = f'inkscape --without-gui --query-all "{self.svg_file}"'
+        proc = Popen(command, shell=True, stdout=PIPE, stderr=PIPE)
+        proc.wait()
+        line = proc.stdout.readline()
+        bbox = [float(i) for i in line.split(",")[1:5]]
+        posx = vbox[0] + bbox[0] - (width_px - bbox[2]) / 2
+        posy = vbox[1] + bbox[1] - (height_px - bbox[3]) / 2
+        root = self.xpathSingle("//svg:svg")
+        root.set("viewBox", "{} {} {} {}".format(posx, posy, width_px, height_px))
+        root.set("width", "{}mm".format(width_mm))
+        root.set("height", "{}mm".format(height_mm))
 
-effect = SetA4ViewportEffect ()
-effect.affect ()
+
+effect = SetA4ViewportEffect()
+effect.affect()
