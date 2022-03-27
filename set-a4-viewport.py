@@ -25,11 +25,10 @@ import inkex  # noqa
 class SetA4ViewportEffect(inkex.Effect):
     def __init__(self):
         inkex.Effect.__init__(self)
-        self.OptionParser.add_option(
+        self.arg_parser.add_argument(
             "--orientation",
             dest="orientation",
             action="store",
-            type="string",
             default="portrait",
         )
 
@@ -44,20 +43,20 @@ class SetA4ViewportEffect(inkex.Effect):
             height_mm = 210
         width_px = width_mm * scale
         height_px = height_mm * scale
-        root = self.xpathSingle("//svg:svg")
+        root = self.svg.getElement("//svg:svg")
         vbox = [float(i) for i in root.get("viewBox").split(" ")]
-        command = f'inkscape --without-gui --query-all "{self.svg_file}"'
-        proc = Popen(command, shell=True, stdout=PIPE, stderr=PIPE)
+        command = f'inkscape --query-all "{self.svg_file}"'
+        proc = Popen(command, shell=True, stdout=PIPE, stderr=PIPE, encoding="utf-8")
         proc.wait()
         line = proc.stdout.readline()
         bbox = [float(i) for i in line.split(",")[1:5]]
         posx = vbox[0] + bbox[0] - (width_px - bbox[2]) / 2
         posy = vbox[1] + bbox[1] - (height_px - bbox[3]) / 2
-        root = self.xpathSingle("//svg:svg")
+        root = self.svg.getElement("//svg:svg")
         root.set("viewBox", "{} {} {} {}".format(posx, posy, width_px, height_px))
         root.set("width", "{}mm".format(width_mm))
         root.set("height", "{}mm".format(height_mm))
 
 
 effect = SetA4ViewportEffect()
-effect.affect()
+effect.run()
