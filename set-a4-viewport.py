@@ -53,9 +53,9 @@ class SetA4ViewportEffect(inkex.Effect):
         posx = vbox[0] + bbox[0] - (width_px - bbox[2]) / 2
         posy = vbox[1] + bbox[1] - (height_px - bbox[3]) / 2
         root = self.svg.getElement("//svg:svg")
-        root.set("viewBox", "{} {} {} {}".format(posx, posy, width_px, height_px))
-        root.set("width", "{}mm".format(width_mm))
-        root.set("height", "{}mm".format(height_mm))
+        root.set("viewBox", f"{posx} {posy} {width_px} {height_px}")
+        root.set("width", f"{width_mm}mm")
+        root.set("height", f"{height_mm}mm")
 
 
 effect = SetA4ViewportEffect()
