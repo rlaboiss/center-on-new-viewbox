@@ -4,15 +4,15 @@
 
 This Inkscape extension sets the viewport to the A4 format (either portrait
 or landscape) and center the content of the drawing to that viewport. This
-may be useful for printing the drawing and ensuring that it will centered
+may be useful for printing the drawing and ensuring that it will be centered
 on the paper.
 
 ## Installation
 
 Copy the files `set-a4-viewport.inx` and `set-a4-viewport.py` into the
 Inkscape's `extensions/` directory. In Linux systems, you can use the
-provided `Makefile` to install the files in the user's extensions
-directory:
+provided `Makefile` to install the files into the user's extensions
+directory, by running:
 
 ```sh
 $ make install
