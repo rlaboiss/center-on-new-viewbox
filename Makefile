@@ -9,3 +9,7 @@ install:
 .PHONY: uninstall
 uninstall:
 	rm -f $(DESTDIR)/$(NAME).*
+
+.PHONY: lint
+lint:
+	for i in isort flake8 black pylint ; do $$i *.py ; done
