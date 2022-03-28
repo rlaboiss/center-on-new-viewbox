@@ -22,7 +22,7 @@ import inkex  # noqa
 
 
 class SetA4ViewportEffect(inkex.Effect):
-    "Effect for setting the Viewport to A4 paper format"
+    """Effect for setting the Viewport to A4 paper format"""
 
     def __init__(self):
         inkex.Effect.__init__(self)
@@ -34,7 +34,7 @@ class SetA4ViewportEffect(inkex.Effect):
         )
 
     def effect(self):
-        "Effect function"
+        """Effect function"""
 
         # Set the width and height of an A4 paper, according to the
         # orientation (portrait or landscape)
