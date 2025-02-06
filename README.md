@@ -28,8 +28,14 @@ git clone https://github.com/rlaboiss/set-a4-viewport.git
 
 ## Usage
 
-Just select the menu item Extensions → Document → Set A4 viewport. Either
-portrait or landscape orientation can be chosen.
+Select the menu item Extensions → Document → Set A4 viewport. Either
+portrait or landscape orientation can be chosen. The current viewport will
+be resized to the dimensions of an A4 paper. The previous page is centered
+on the new viewport.
+
+If the A4 viewport should be centered on a specific object (or group of
+objects), first select the object (or the group of objects) and click on
+the button “Resize to content” in the “Document Properties” dialog.
 
 ## Limitations
 
