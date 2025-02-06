@@ -17,6 +17,14 @@ directory, by running:
 ```sh
 $ make install
 ```
+It is also possible to install directly from the Git repository. Change to
+the `extensions` directory (in Linux systems either the system-wide
+`/usr/share/inkscape/extensions` or the user-specfic
+`~/.config/inkscape/extensions/`) and run, in a terminal:
+
+```sh
+git clone https://github.com/rlaboiss/set-a4-viewport.git
+````
 
 ## Usage
 
