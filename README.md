@@ -24,7 +24,7 @@ the `extensions` directory (in Linux systems either the system-wide
 
 ```sh
 git clone https://github.com/rlaboiss/set-a4-viewport.git
-````
+```
 
 ## Usage
 
