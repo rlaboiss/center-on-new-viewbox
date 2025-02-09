@@ -17,6 +17,7 @@ directory, by running:
 ```sh
 $ make install
 ```
+
 It is also possible to install directly from the Git repository. Change to
 the `extensions` directory (in Linux systems either the system-wide
 `/usr/share/inkscape/extensions` or the user-specfic
@@ -33,9 +34,8 @@ portrait or landscape orientation can be chosen. The current viewport will
 be resized to the dimensions of an A4 paper. The previous page is centered
 on the new viewport.
 
-If the A4 viewport should be centered on a specific object (or group of
-objects), first select the object (or the group of objects) and click on
-the button “Resize to content” in the “Document Properties” dialog.
+If there is an object or group of objects selected, then it will be
+centered in the new viewport.
 
 ## Limitations
 
