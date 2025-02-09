@@ -34,18 +34,30 @@ class SetA4ViewportEffect(inkex.Effect):
             action="store",
             default="portrait",
         )
+        self.arg_parser.add_argument(
+            "--format",
+            dest="format",
+            action="store",
+            default="A4",
+        )
 
     def effect(self):
         """Effect function"""
 
-        # Set the width and height of an A4 paper, according to the
-        # orientation (portrait or landscape)
-        if self.options.orientation == "portrait":
-            width = 210
-            height = 297
-        else:
-            width = 297
-            height = 210
+        paper_formats = {
+            "A0": (841, 1189),
+            "A1": (594, 841),
+            "A2": (420, 594),
+            "A3": (297, 420),
+            "A4": (210, 297),
+            "A5": (148, 210),
+            "A6": (105, 148),
+            "A7": (74, 105)
+        }
+
+        width, height = paper_formats[self.options.format]
+        if self.options.orientation == "landscape":
+            width, height = height, width
 
         if self.svg.selected:
             # Get the bounding box of the selected objects

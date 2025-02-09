@@ -1,11 +1,14 @@
-# Set centered A4 viewport
+# Center on new viewport
 
 ## Description
 
-This Inkscape extension sets the viewport to the A4 format (either portrait
-or landscape) and center the content of the drawing to that viewport. This
-may be useful for printing the drawing and ensuring that it will be centered
-on the paper.
+This Inkscape extension sets the viewport to a ISO 216 paper format (either
+portrait or landscape) and center the content of the selected drawing to
+that viewport. This may be useful for printing the drawing and ensuring
+that it will be centered on the paper.
+
+Notice that the name of this extension “set-a4-viewport” comes from a
+legacy state, when the viewport format was restricted to A4 paper format.
 
 ## Installation
 
@@ -29,21 +32,17 @@ git clone https://github.com/rlaboiss/set-a4-viewport.git
 
 ## Usage
 
-Select the menu item Extensions → Document → Set A4 viewport. Either
-portrait or landscape orientation can be chosen. The current viewport will
-be resized to the dimensions of an A4 paper. The previous page is centered
-on the new viewport.
+Select the menu item Extensions → Document → Center on new viewport. Either
+portrait or landscape orientation can be chosen. Several paper format are
+proposed (friom A0 to A7). The current viewport will be resized to the
+dimensions of the chosen paper format. The previous page is centered on the
+new viewport.
 
 If there is an object or group of objects selected, then it will be
 centered in the new viewport.
 
-## Limitations
-
-This extension is limited to the A4 format. It will be eventually improved
-in order to allow other paper formats.
-
 ## Author
 
-Copyright (C) 2019, 2022 Rafael Laboissière (<rafael@laboissiere.net>)
+Copyright (C) 2019, 2022, 2025 Rafael Laboissière (<rafael@laboissiere.net>)
 
 Released under the GNU General Public License, version 3 or later. No warranties.

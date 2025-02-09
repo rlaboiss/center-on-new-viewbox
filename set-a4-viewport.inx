@@ -1,11 +1,21 @@
 <!-- -*- xml -*- -->
 <inkscape-extension>
-  <_name>Set A4 viewport</_name>
+  <_name>Center on new viewport</_name>
   <id>org.rlaboiss.inkscape.seta4viewport</id>
 
   <script>
     <command reldir="extensions" interpreter="python">set-a4-viewport.py</command>
   </script>
+  <param name="format" type="optiongroup" appearance="combo" gui-text="Format">
+    <option value="A7">A7</option>
+    <option value="A6">A6</option>
+    <option value="A5">A5</option>
+    <option value="A4" default="true">A4</option>
+    <option value="A3">A3</option>
+    <option value="A2">A2</option>
+    <option value="A1">A1</option>
+    <option value="A0">A0</option>
+  </param>
   <param name="orientation" type="optiongroup" gui-text="Paper orientation">
     <option value="portrait">portrait</option>
     <option value="landscape">landscape</option>
