@@ -2,7 +2,7 @@
 
 """Inkscape extension for center objects on a new viewport"""
 
-# Copyright (C) 2019, 2022  Rafael Laboissière
+# Copyright (C) 2019, 2022, 2024  Rafael Laboissière
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
