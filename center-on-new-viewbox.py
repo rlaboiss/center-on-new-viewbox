@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Inkscape extension for setting the viewport to a centered A4 sheet"""
+"""Inkscape extension for center objects on a new viewport"""
 
 # Copyright (C) 2019, 2022  Rafael Laboissière
 #
@@ -23,8 +23,8 @@ sys.path.append("/usr/share/inkscape/extensions")
 import inkex  # noqa
 
 
-class SetA4ViewportEffect(inkex.Effect):
-    """Effect for setting the Viewport to A4 paper format"""
+class CenterOnNewViewboxEffect(inkex.Effect):
+    """Effect for centering on a newly defined viewbox"""
 
     def __init__(self):
         inkex.Effect.__init__(self)
@@ -77,5 +77,5 @@ class SetA4ViewportEffect(inkex.Effect):
         root.set("height", f"{height}mm")
 
 
-effect = SetA4ViewportEffect()
+effect = CenterOnNewViewboxEffect()
 effect.run()

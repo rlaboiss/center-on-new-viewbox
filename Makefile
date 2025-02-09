@@ -1,5 +1,5 @@
 DESTDIR = $(HOME)/.config/inkscape/extensions
-NAME = set-a4-viewport
+NAME = center-on-new-viewbox
 
 .PHONY: install
 install:

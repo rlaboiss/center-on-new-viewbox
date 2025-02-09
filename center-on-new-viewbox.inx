@@ -1,10 +1,10 @@
 <!-- -*- xml -*- -->
 <inkscape-extension>
-  <_name>Center on new viewport</_name>
-  <id>org.rlaboiss.inkscape.seta4viewport</id>
+  <_name>Center on new viewbox</_name>
+  <id>org.rlaboiss.inkscape.seta4viewbox</id>
 
   <script>
-    <command reldir="extensions" interpreter="python">set-a4-viewport.py</command>
+    <command reldir="extensions" interpreter="python">center-on-new-viewbox.py</command>
   </script>
   <param name="format" type="optiongroup" appearance="combo" gui-text="Format">
     <option value="A7">A7</option>
